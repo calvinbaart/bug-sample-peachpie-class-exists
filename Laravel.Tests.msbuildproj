@@ -1,0 +1,26 @@
+<Project Sdk="Peachpie.NET.Sdk/1.0.0-dev">
+  <PropertyGroup>
+    <OutputType>exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <PackageVersion>1.0.0</PackageVersion>
+    <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006,PHP5014,PHP5015,PHP5026,PHP5028,PHP5025,PHP5007,PHP5022,PHP5018,PHP5012</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="
+      main.php;
+      vendor/**/*.php;" Exclude="
+        vendor/**/tests/**;
+        vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;
+        vendor/mockery/mockery/library/Mockery/Mock.php;
+        vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;
+        vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;
+        vendor/fzaninotto/faker/test/**;
+        tests/Routing/fixtures/**;
+        **/php5**;" />
+
+    <PackageReference Include="Peachpie.Library.PDO.Sqlite" Version="1.0.0-dev" />
+    <PackageReference Include="System.Composition.AttributedModel" Version="1.1.0" />
+  </ItemGroup>
+</Project>
